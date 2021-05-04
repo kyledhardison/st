@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "SourceCodePro:pixelsize=18:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -96,30 +96,32 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+    "#3f3f3f",
+    "#705050",
+    "#60b48a",
+    "#dfaf8f",
+    "#506070",
+    "#dc8cc3",
+    "#8cd0d3",
+    "#dcdccc",
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+    "#709080",
+    "#dca3a3",
+    "#c3bf9f",
+    "#f0dfaf",
+    "#94bff3",
+    "#ec93d3",
+    "#93e0e3",
+    "#ffffff",
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
+    "#dcdccc",
+    "#3f3f3f"
 };
 
 
@@ -127,8 +129,8 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
+unsigned int defaultfg = 258;
+unsigned int defaultbg = 259;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
@@ -199,6 +201,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
 /*
